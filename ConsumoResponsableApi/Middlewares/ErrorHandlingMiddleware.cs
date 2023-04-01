@@ -7,6 +7,7 @@ namespace ConsumoResponsableApi.Middlewares
 {
     public class ErrorHandlingMiddleware : IMiddleware
     {
+        private Stream _referenceOriginBody = null!;
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
@@ -21,20 +22,15 @@ namespace ConsumoResponsableApi.Middlewares
             {
                 await BuildResponseAsync(context,
                     Response.GetResponseError(HttpEnums.InternalServerError, "Internal Server Error"),
-                    ex, true);
+                    ex);
             }
         }
 
-        private async Task BuildResponseAsync(HttpContext httpContext, ResponseError responseError, Exception ex, bool isFatal = false)
+        private async Task BuildResponseAsync(HttpContext httpContext, ResponseError responseError, Exception ex)
         {
 
             httpContext.Response.ContentType = "application/json";
             httpContext.Response.StatusCode = responseError.StatusCode;
-
-            var loggingInputObj = new
-            {
-                error_ex_to_string = ex.ToString()
-            };
 
             await httpContext.Response.WriteAsync(JsonSerializer.Serialize(responseError, new JsonSerializerOptions
             {

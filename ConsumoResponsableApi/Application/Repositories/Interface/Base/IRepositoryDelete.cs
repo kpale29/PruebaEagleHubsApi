@@ -1,6 +1,5 @@
-﻿
-namespace ConsumoResponsableApi.Repositories.Interface.Base
-{  
+﻿namespace ConsumoResponsableApi.Application.Repositories.Interface.Base
+{
     public interface IRepositoryDelete<TRequest, TResponse> where TResponse : class where TRequest : class
     {
         public Task<TResponse> DeleteAsync(TRequest data);
@@ -10,4 +9,4 @@ namespace ConsumoResponsableApi.Repositories.Interface.Base
     {
         Task<TModel> DeleteAsync(TModel data);
     }
-} 
+}

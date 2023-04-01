@@ -1,7 +1,6 @@
-﻿
-using ConsumoResponsableApi.Utils.Responses;
+﻿using ConsumoResponsableApi.Utils.Responses;
 
-namespace ConsumoResponsableApi.Services.Interface.Base
+namespace ConsumoResponsableApi.Application.Services.Interface.Base
 {
     public interface IServicePost<TRequest, TResponse> where TResponse : class where TRequest : class
     {
@@ -17,4 +16,4 @@ namespace ConsumoResponsableApi.Services.Interface.Base
     {
         public Task<TResponse> PostAsync(TRequest data);
     }
-} 
+}

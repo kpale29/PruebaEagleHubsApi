@@ -1,8 +1,7 @@
-﻿
-using ConsumoResponsableApi.Utils.Responses;
+﻿using ConsumoResponsableApi.Utils.Responses;
 
-namespace ConsumoResponsableApi.Services.Interface.Base
-{ 
+namespace ConsumoResponsableApi.Application.Services.Interface.Base
+{
     public interface IServiceDelete<TRequest, TResponse> where TRequest : class where TResponse : class
     {
         public Task<ResponseSuccess<TResponse>> DeleteAsync(TRequest data);
@@ -12,4 +11,4 @@ namespace ConsumoResponsableApi.Services.Interface.Base
     {
         Task<ResponseSuccess<TModel>> DeleteAsync(TModel data);
     }
-} 
+}

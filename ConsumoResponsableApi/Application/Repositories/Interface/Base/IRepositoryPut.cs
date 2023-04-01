@@ -1,5 +1,4 @@
-﻿
-namespace ConsumoResponsableApi.Repositories.Interface.Base 
+﻿namespace ConsumoResponsableApi.Application.Repositories.Interface.Base
 {
     public interface IRepositoryPut<TRequest, TResponse> where TResponse : class where TRequest : class
     {

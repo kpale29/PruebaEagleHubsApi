@@ -1,5 +1,4 @@
-﻿
-namespace ConsumoResponsableApi.Repositories.Interface.Base 
+﻿namespace ConsumoResponsableApi.Application.Repositories.Interface.Base
 {
     public interface IRepositoryGet<TResponse> where TResponse : class
     {
@@ -16,12 +15,12 @@ namespace ConsumoResponsableApi.Repositories.Interface.Base
     }
 
     public interface IRepositoryGetAllDetail<TResponseGetAllDetail> where TResponseGetAllDetail : class
-        {
+    {
         public Task<List<TResponseGetAllDetail>> GetAllDetailAsync();
     }
 
     public interface IRepositoryGetAllById<TRequestGetAllById, TResponseGetAllById> where TResponseGetAllById : class where TRequestGetAllById : class
-        {
+    {
         public Task<List<TResponseGetAllById>> GetAllByIdAsync(TRequestGetAllById filterData);
     }
 }

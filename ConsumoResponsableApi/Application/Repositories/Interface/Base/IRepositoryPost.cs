@@ -1,5 +1,4 @@
-﻿
-namespace ConsumoResponsableApi.Repositories.Interface.Base 
+﻿namespace ConsumoResponsableApi.Application.Repositories.Interface.Base
 {
     public interface IRepositoryPost<TRequest, TResponse> where TResponse : class where TRequest : class
     {
@@ -7,7 +6,7 @@ namespace ConsumoResponsableApi.Repositories.Interface.Base
     }
 
     public interface IRepositoryPost<TModel> where TModel : class
-    { 
+    {
         Task<TModel> PostAsync(TModel data);
     }
 }

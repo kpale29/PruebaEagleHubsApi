@@ -1,7 +1,6 @@
-﻿
-using ConsumoResponsableApi.Utils.Responses;
+﻿using ConsumoResponsableApi.Utils.Responses;
 
-namespace ConsumoResponsableApi.Services.Interface.Base
+namespace ConsumoResponsableApi.Application.Services.Interface.Base
 {
     public interface IServiceGet<TResponse> where TResponse : class
     {

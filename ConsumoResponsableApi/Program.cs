@@ -2,6 +2,7 @@
 using ConsumoResponsableApi.Application.Repositories.Interface.Base;
 using ConsumoResponsableApi.Application.Services.Implementation;
 using ConsumoResponsableApi.Application.Services.Interface.Base;
+using ConsumoResponsableApi.Application.Services.Interface.Custom;
 using ConsumoResponsableApi.Domain.Entities;
 using ConsumoResponsableApi.Domain.Models.Consumption.RepositoryFilters;
 using ConsumoResponsableApi.Domain.Models.Consumption.Request;
@@ -29,7 +30,7 @@ builder.Services.AddScoped<IServicePost<PostEnergyConsumptionRequest, PostDefaul
 builder.Services.AddScoped<IServicePost<PostOtherConsumptionRequest, PostDefaultConsumptionResponse>, ConsumptionService>();
 builder.Services.AddScoped<IServicePost<PostTravelConsumptionRequest, PostDefaultConsumptionResponse>, ConsumptionService>();
 builder.Services.AddScoped<IServicePut<PutConsumptionRequest, PostDefaultConsumptionResponse>, ConsumptionService>();
-
+builder.Services.AddScoped<IConsumptionsReport, ConsumptionReportsService>();
 //Repositories Injections
 builder.Services.AddScoped<IRepositoryPost<Consumption, Consumption>, ConsumptionRepository>();
 builder.Services.AddScoped<IRepositoryPut<Consumption>, ConsumptionRepository>();

@@ -1,4 +1,5 @@
-﻿using ConsumoResponsableApi.Utils.Responses;
+﻿using Azure.Core;
+using ConsumoResponsableApi.Utils.Responses;
 
 namespace ConsumoResponsableApi.Application.Services.Interface.Base
 {
@@ -6,8 +7,7 @@ namespace ConsumoResponsableApi.Application.Services.Interface.Base
     {
         public Task<ResponseSuccess<TResponse>> GetAsync();
     }
-
-    public interface IServiceGetById<TRequest, TResponse> where TRequest : class where TResponse : class
+    public interface IServiceGetById<TRequest, TResponse> where TRequest : class
     {
         public Task<ResponseSuccess<TResponse>> GetByIdAsync(TRequest filterData);
     }

@@ -135,14 +135,16 @@ namespace ConsumoResponsableApi.Application.Services.Implementation
         {
             Consumption consumptionToUpdate = await _consumptionGetByIdRepository.GetByIdAsync(new()
             {
-                Id = 1
+                Id = data.ConsumptionId
             });
+
+            consumptionToUpdate.Quantity = data.Quantity;
 
             await _consumptionPutRepository.PutAsync(consumptionToUpdate);
 
             return new ResponseSuccess<PostDefaultConsumptionResponse>(HttpEnums.Ok, new()
             {
-                Message = "Consumo registrado correctamente"
+                Message = "Consumo actualizado correctamente"
             });
         }
     }

@@ -1,5 +1,6 @@
 ﻿using ConsumoResponsableApi.Domain.Entities;
 using ConsumoResponsableApi.Domain.Entities.Base;
+using ConsumoResponsableApi.Infrastructure.Persistence.SeedData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -19,6 +20,14 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence
         public DbSet<Location> Locations { get; set; } = null!;
         public DbSet<UnitMeasure> UnitMeasures { get; set; } = null!;
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CompanyConfig());
+            modelBuilder.ApplyConfiguration(new ConsumptionTypeConfig());
+            modelBuilder.ApplyConfiguration(new EmissionConfig());
+            modelBuilder.ApplyConfiguration(new LocationConfig());
+            modelBuilder.ApplyConfiguration(new UnitMeasureConfig());
+        }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             IEnumerable<EntityEntry> entries = ChangeTracker

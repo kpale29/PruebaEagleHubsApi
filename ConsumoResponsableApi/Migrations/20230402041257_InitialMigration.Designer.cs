@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
+namespace ConsumoResponsableApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230401232541_MigrationInitial")]
-    partial class MigrationInitial
+    [Migration("20230402041257_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,6 +72,16 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 990, DateTimeKind.Utc).AddTicks(9909),
+                            Description = "Fabrica Industrial S.A.",
+                            Name = "Fabrica Industrial S.A."
+                        });
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.Consumption", b =>
@@ -104,34 +114,20 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                         .HasColumnName("deleted_at")
                         .HasComment("Delete date");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)")
-                        .HasColumnName("description")
-                        .HasComment("Catalogue item description");
+                    b.Property<DateTime>("ExecutedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("executed_at")
+                        .HasComment("Consumption execution date");
 
                     b.Property<int>("LocationId")
                         .HasColumnType("integer")
                         .HasColumnName("location_id")
                         .HasComment("Location Foreign key");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("name")
-                        .HasComment("Catalogue item name");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("integer")
                         .HasColumnName("quantity")
                         .HasComment("Consumption quantity");
-
-                    b.Property<int>("UnitMeasureId")
-                        .HasColumnType("integer")
-                        .HasColumnName("unit_measure_id")
-                        .HasComment("Unit Measure Foreign key");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -143,8 +139,6 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                     b.HasIndex("ConsumptionTypeId");
 
                     b.HasIndex("LocationId");
-
-                    b.HasIndex("UnitMeasureId");
 
                     b.ToTable("Consumptions");
                 });
@@ -198,6 +192,11 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                         .HasColumnName("petroleum_derivative")
                         .HasComment("Petroleum derivative item");
 
+                    b.Property<int>("UnitMeasureId")
+                        .HasColumnType("integer")
+                        .HasColumnName("unit_measure_id")
+                        .HasComment("Unit Measure Foreign key");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at")
@@ -207,7 +206,88 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("EmissionId");
 
+                    b.HasIndex("UnitMeasureId");
+
                     b.ToTable("ConsumptionTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(255),
+                            Description = "Consumo combustible para los vehículos",
+                            EmissionId = 1,
+                            Name = "combustible para los vehículos",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(262),
+                            Description = "Perdida de gases refrigerantes",
+                            EmissionId = 1,
+                            Name = "gases refrigerantes",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(263),
+                            Description = "Consumo de energía eléctrica ",
+                            EmissionId = 1,
+                            Name = "energía eléctrica",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(265),
+                            Description = "Uso mensual de combustible para vehículos terceros",
+                            EmissionId = 2,
+                            Name = "combustible para transportes de terceros",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(266),
+                            Description = "Viajes de miembros del equipo",
+                            EmissionId = 3,
+                            Name = "viajes",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(271),
+                            Description = "Consumo de aceite para mantenimiento",
+                            EmissionId = 1,
+                            Name = "aceite para mantenimiento",
+                            PetroleumDerivative = true,
+                            UnitMeasureId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(272),
+                            Description = "Otros consumos (Papel, lapices, agua,etc)",
+                            EmissionId = 1,
+                            Name = "otros",
+                            PetroleumDerivative = false,
+                            UnitMeasureId = 3
+                        });
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.Emission", b =>
@@ -257,6 +337,32 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Emissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(634),
+                            Description = "Asociadas a las actividades de la organización y que están controladas por dicha organización.",
+                            Name = "directas"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(640),
+                            Description = "Asociadas al consumo energético adquirido y consumido por la organización.",
+                            Name = "indirectas"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(642),
+                            Description = "Asociadas a otras actividades no controladas por la organización.",
+                            Name = "otras"
+                        });
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.Location", b =>
@@ -313,6 +419,62 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                     b.HasIndex("CompanyId");
 
                     b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(978),
+                            Description = "Area administrativa",
+                            Name = "Administracion"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(982),
+                            Description = "Area de distribucion",
+                            Name = "Distribucion"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(984),
+                            Description = "Proveedores de transportes",
+                            Name = "Transportes Terceros"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(985),
+                            Description = "Area gerencial",
+                            Name = "Gerencia"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(986),
+                            Description = "Area de planta de envasado",
+                            Name = "Planta de envasado"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Active = true,
+                            CompanyId = 1,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(989),
+                            Description = "Area de operaciones",
+                            Name = "Operaciones"
+                        });
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.UnitMeasure", b =>
@@ -362,6 +524,32 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UnitMeasures");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(1432),
+                            Description = "Kilo Watts",
+                            Name = "kw"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(1486),
+                            Description = "Galones",
+                            Name = "galon"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Active = true,
+                            CreatedAt = new DateTime(2023, 4, 2, 4, 12, 56, 991, DateTimeKind.Utc).AddTicks(1488),
+                            Description = "Unidad",
+                            Name = "unidad"
+                        });
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.Consumption", b =>
@@ -378,17 +566,9 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ConsumoResponsableApi.Domain.Entities.UnitMeasure", "UnitMeasure")
-                        .WithMany()
-                        .HasForeignKey("UnitMeasureId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("ConsumptionType");
 
                     b.Navigation("Location");
-
-                    b.Navigation("UnitMeasure");
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.ConsumptionType", b =>
@@ -399,7 +579,15 @@ namespace ConsumoResponsableApi.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ConsumoResponsableApi.Domain.Entities.UnitMeasure", "UnitMeasure")
+                        .WithMany()
+                        .HasForeignKey("UnitMeasureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Emission");
+
+                    b.Navigation("UnitMeasure");
                 });
 
             modelBuilder.Entity("ConsumoResponsableApi.Domain.Entities.Location", b =>

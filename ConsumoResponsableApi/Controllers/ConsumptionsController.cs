@@ -4,50 +4,62 @@ using ConsumoResponsableApi.Domain.Models.Consumption.Response;
 using ConsumoResponsableApi.Utils.Responses;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ConsumoResponsableApi.Controllers
+namespace ConsumoResponsableApi.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class ConsumptionsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ConsumptionsController : ControllerBase
-    {
-        private readonly IServicePost<PostFuelConsumptionRequest, PostDefaultConsumptionResponse> _fuelConsumptionService;
-        private readonly IServicePost<PostEnergyConsumptionRequest, PostDefaultConsumptionResponse> _energyConsumptionService;
-        private readonly IServicePost<PostOtherConsumptionRequest, PostDefaultConsumptionResponse> _otherConsumptionService;
-        private readonly IServicePost<PostTravelConsumptionRequest, PostDefaultConsumptionResponse> _travelConsumptinoService;
-        public ConsumptionsController(IServicePost<PostFuelConsumptionRequest, PostDefaultConsumptionResponse> fuelConsumptionService,
+    private readonly IServicePost<PostFuelConsumptionRequest, PostDefaultConsumptionResponse> _fuelConsumptionService;
+    private readonly IServicePost<PostEnergyConsumptionRequest, PostDefaultConsumptionResponse> _energyConsumptionService;
+    private readonly IServicePost<PostOtherConsumptionRequest, PostDefaultConsumptionResponse> _otherConsumptionService;
+    private readonly IServicePost<PostTravelConsumptionRequest, PostDefaultConsumptionResponse> _travelConsumptinoService;
+    private readonly IServicePut<PutConsumptionRequest, PostDefaultConsumptionResponse> _putConsumptionService;
+    public ConsumptionsController(
+        IServicePost<PostFuelConsumptionRequest, PostDefaultConsumptionResponse> fuelConsumptionService,
         IServicePost<PostEnergyConsumptionRequest, PostDefaultConsumptionResponse> energyConsumptionService,
         IServicePost<PostOtherConsumptionRequest, PostDefaultConsumptionResponse> otherConsumptionService,
-        IServicePost<PostTravelConsumptionRequest, PostDefaultConsumptionResponse> travelConsumptinoService)
-        {
-            _energyConsumptionService = energyConsumptionService;
-            _fuelConsumptionService = fuelConsumptionService;
-            _otherConsumptionService = otherConsumptionService;
-            _travelConsumptinoService = travelConsumptinoService;
-        }
+        IServicePost<PostTravelConsumptionRequest, PostDefaultConsumptionResponse> travelConsumptinoService,
+        IServicePut<PutConsumptionRequest, PostDefaultConsumptionResponse> putConsumptionService
+
+    )
+    {
+        _energyConsumptionService = energyConsumptionService;
+        _fuelConsumptionService = fuelConsumptionService;
+        _otherConsumptionService = otherConsumptionService;
+        _travelConsumptinoService = travelConsumptinoService;
+        _putConsumptionService = putConsumptionService;
+    }
 
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> FuelConsumption(PostFuelConsumptionRequest request)
-        {
-            return Ok(await _fuelConsumptionService.PostAsync(request));
-        }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> FuelConsumption(PostFuelConsumptionRequest request)
+    {
+        return Ok(await _fuelConsumptionService.PostAsync(request));
+    }
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> EnergyConsumption(PostEnergyConsumptionRequest request)
-        {
-            return Ok(await _energyConsumptionService.PostAsync(request));
-        }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> EnergyConsumption(PostEnergyConsumptionRequest request)
+    {
+        return Ok(await _energyConsumptionService.PostAsync(request));
+    }
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> OtherConsumption(PostOtherConsumptionRequest request)
-        {
-            return Ok(await _otherConsumptionService.PostAsync(request));
-        }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> OtherConsumption(PostOtherConsumptionRequest request)
+    {
+        return Ok(await _otherConsumptionService.PostAsync(request));
+    }
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> TravelConsumption(PostTravelConsumptionRequest request)
-        {
-            return Ok(await _travelConsumptinoService.PostAsync(request));
-        }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> TravelConsumption(PostTravelConsumptionRequest request)
+    {
+        return Ok(await _travelConsumptinoService.PostAsync(request));
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> PutAsync(PutConsumptionRequest request)
+    {
+        return Ok(await _putConsumptionService.PutAsync(request));
     }
 }
+

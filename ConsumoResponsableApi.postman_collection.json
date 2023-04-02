@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "c0b62a41-ad8a-4749-bafe-219b9145b861",
+		"name": "ConsumoResponsableApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20570066"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "MontlyImpact",
+							"item": [
+								{
+									"name": "/api/Reports/MontlyImpact",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/MontlyImpact",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"MontlyImpact"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/MontlyImpact",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"MontlyImpact"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "MontlyFuelConsumptions",
+							"item": [
+								{
+									"name": "/api/Reports/MontlyFuelConsumptions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/MontlyFuelConsumptions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"MontlyFuelConsumptions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/MontlyFuelConsumptions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"MontlyFuelConsumptions"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "MontlyEnergyFuelComparison",
+							"item": [
+								{
+									"name": "/api/Reports/MontlyEnergyFuelComparison",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/MontlyEnergyFuelComparison",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"MontlyEnergyFuelComparison"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/MontlyEnergyFuelComparison",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"MontlyEnergyFuelComparison"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "MontlyEnergyConsumptionsFactory",
+							"item": [
+								{
+									"name": "/api/Reports/MontlyEnergyConsumptionsFactory",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/MontlyEnergyConsumptionsFactory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"MontlyEnergyConsumptionsFactory"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/MontlyEnergyConsumptionsFactory",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"MontlyEnergyConsumptionsFactory"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ComparisonPetroleumDerivativeConsumptions",
+							"item": [
+								{
+									"name": "/api/Reports/ComparisonPetroleumDerivativeConsumptions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/ComparisonPetroleumDerivativeConsumptions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"ComparisonPetroleumDerivativeConsumptions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/ComparisonPetroleumDerivativeConsumptions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"ComparisonPetroleumDerivativeConsumptions"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "AnualConsumptions",
+							"item": [
+								{
+									"name": "/api/Reports/AnualConsumptions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Reports/AnualConsumptions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Reports",
+												"AnualConsumptions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Reports/AnualConsumptions",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Reports",
+														"AnualConsumptions"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Consumptions",
+					"item": [
+						{
+							"name": "TravelConsumption",
+							"item": [
+								{
+									"name": "/api/Consumptions/TravelConsumption",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Consumptions/TravelConsumption",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Consumptions",
+												"TravelConsumption"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Consumptions/TravelConsumption",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Consumptions",
+														"TravelConsumption"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "OtherConsumption",
+							"item": [
+								{
+									"name": "/api/Consumptions/OtherConsumption",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"consumptionTypeId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Consumptions/OtherConsumption",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Consumptions",
+												"OtherConsumption"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"consumptionTypeId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Consumptions/OtherConsumption",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Consumptions",
+														"OtherConsumption"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "FuelConsumption",
+							"item": [
+								{
+									"name": "/api/Consumptions/FuelConsumption",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Consumptions/FuelConsumption",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Consumptions",
+												"FuelConsumption"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Consumptions/FuelConsumption",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Consumptions",
+														"FuelConsumption"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "EnergyConsumption",
+							"item": [
+								{
+									"name": "/api/Consumptions/EnergyConsumption",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Consumptions/EnergyConsumption",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Consumptions",
+												"EnergyConsumption"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"quantity\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"executedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Consumptions/EnergyConsumption",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Consumptions",
+														"EnergyConsumption"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Consumptions",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quantity\": \"<integer>\",\n  \"consumptionId\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Consumptions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Consumptions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": \"<integer>\",\n  \"consumptionId\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Consumptions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Consumptions"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

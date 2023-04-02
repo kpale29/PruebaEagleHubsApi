@@ -133,9 +133,6 @@ namespace ConsumoResponsableApi.Application.Services.Implementation
 
         public async Task<ResponseSuccess<PostDefaultConsumptionResponse>> PutAsync(PutConsumptionRequest data)
         {
-
-
-
             Consumption consumptionToUpdate = await _consumptionGetByIdRepository.GetByIdAsync(new()
             {
                 Id = 1

@@ -1,8 +1,6 @@
 ﻿using ConsumoResponsableApi.Domain.Entities.Base;
 
-namespace ConsumoResponsableApi.Domain.Entities
+namespace ConsumoResponsableApi.Domain.Entities;
+public class UnitMeasure : CatBaseEntity
 {
-    public class UnitMeasure : CatBaseEntity
-    {
-    }
 }

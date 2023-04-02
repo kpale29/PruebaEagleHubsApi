@@ -1,10 +1,8 @@
-﻿using ConsumoResponsableApi..Entities.Base;
-using ConsumoResponsableApi.Domain.Entities.Base;
+﻿using ConsumoResponsableApi.Domain.Entities.Base;
 
-namespace ConsumoResponsableApi.Domain.Entities
+namespace ConsumoResponsableApi.Domain.Entities;
+public class Company : CatBaseEntity
 {
-    public class Company : CatBaseEntity
-    {
-        public virtual IEnumerable<Location> Locations { get; set; } = null!;
-    }
+    public virtual IEnumerable<Location> Locations { get; set; } = null!;
 }
+

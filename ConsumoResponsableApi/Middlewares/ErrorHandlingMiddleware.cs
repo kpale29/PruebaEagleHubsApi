@@ -7,7 +7,6 @@ namespace ConsumoResponsableApi.Middlewares
 {
     public class ErrorHandlingMiddleware : IMiddleware
     {
-        private Stream _referenceOriginBody = null!;
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try

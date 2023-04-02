@@ -2,5 +2,10 @@
 {
     public class GetMontlyFuelConsumptionsResponse
     {
+        public int Year { get; set; }
+
+        public int Month { get; set; }
+
+        public double AverageAmount { get; set; }
     }
 }

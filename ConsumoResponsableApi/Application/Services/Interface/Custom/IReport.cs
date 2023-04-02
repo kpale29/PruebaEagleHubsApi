@@ -6,11 +6,11 @@ namespace ConsumoResponsableApi.Application.Services.Interface.Custom
 {
     public interface IConsumptionsReport
     {
-        public Task<ResponseSuccess<GetAnualConsumptionsResponse>> GetAnualConsumptionsAsync();
-        Task<ResponseSuccess<GetComparisonPetroleumDerivativeConsumptionsResponse>> GetPetroleumDerivativeAsync();
-        Task<ResponseSuccess<GetMontlyEnergyConsumptionsFactoryResponse>> GetMontlyEnergyAsync();
-        Task<ResponseSuccess<GetMontlyEnergyFuelComparisonResponse>> GetMontlyComparisonAsync();
-        Task<ResponseSuccess<GetMontlyFuelConsumptionsResponse>> GetMontlyFuelAsync();
-        Task<ResponseSuccess<GetMontlyImpactResponse>> GetMontlyImpactAsync();
+        public Task<ResponseSuccess<List<GetAnualConsumptionsResponse>>> GetAnualConsumptionsAsync();
+        public Task<ResponseSuccess<List<GetComparisonPetroleumDerivativeConsumptionsResponse>>> GetPetroleumDerivativeAsync();
+        public Task<ResponseSuccess<GetMontlyEnergyConsumptionsFactoryResponse>> GetMontlyEnergyAsync();
+        public Task<ResponseSuccess<GetMontlyEnergyFuelComparisonResponse>> GetMontlyComparisonAsync();
+        public Task<ResponseSuccess<List<GetMontlyFuelConsumptionsResponse>>> GetMontlyFuelAsync();
+        public Task<ResponseSuccess<List<GetMontlyImpactResponse>>> GetMontlyImpactAsync();
     }
 }
